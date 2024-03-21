@@ -32,8 +32,10 @@ dependencies:
   flutter:
     sdk: flutter
 
-  #Open screens/snackbars/dialogs without context, manage states and inject dependencies easily with GetX.
+#Open screens/snackbars/dialogs without context, manage states and inject dependencies easily with GetX.
   get: ^4.6.6
+#The Font Awesome Icon pack available as Flutter Icons. Provides 2000 additional icons to use in your apps.
+  font_awesome_flutter: ^10.7.0
 
 dev_dependencies:
 
