@@ -31,19 +31,12 @@ dependencies:
   cupertino_icons: ^1.0.6
   flutter:
     sdk: flutter
-
-#Open screens/snackbars/dialogs without context, manage states and inject dependencies easily with GetX.
-  get: ^4.6.6
-#The Font Awesome Icon pack available as Flutter Icons. Provides 2000 additional icons to use in your apps.
   font_awesome_flutter: ^10.7.0
+  get: ^4.6.6
+#A Flutter package to use fonts from fonts.google.com.
+  google_fonts: ^6.2.1
 
 dev_dependencies:
-
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
   flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
