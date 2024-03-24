@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import 'featured_list_view_item.dart';
@@ -11,6 +10,7 @@ class FeaturedBoxListView extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.23,
       child: ListView.builder(
+        itemCount: 10,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return const Padding(
