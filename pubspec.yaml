@@ -32,9 +32,11 @@ dependencies:
   flutter:
     sdk: flutter
   font_awesome_flutter: ^10.7.0
-  get: ^4.6.6
+
 #A Flutter package to use fonts from fonts.google.com.
   google_fonts: ^6.2.1
+#A declarative router for Flutter based on Navigation 2 supporting deep linking, data-driven routes and more
+  go_router: ^13.2.1
 
 dev_dependencies:
   flutter_lints: ^3.0.0
