@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 import '../../../../../core/utils/assets.dart';
 
 class CustomBookImage extends StatelessWidget {
-  const CustomBookImage({super.key});
+  final double aspectRatio;
+  const CustomBookImage({super.key, required this.aspectRatio});
 
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 1.4 / 2,
+      aspectRatio: aspectRatio,
+      // aspectRatio: 1.4 / 2,
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
