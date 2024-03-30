@@ -8,9 +8,13 @@ class CustomSearchTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var outlineInputBorder = OutlineInputBorder(
+        borderSide: const BorderSide(color: Colors.white),
+        borderRadius: BorderRadius.circular(6));
     return TextFormField(
       decoration: InputDecoration(
-        labelText: 'Search',
+        enabledBorder: outlineInputBorder,
+        hintText: 'Search',
         suffixIcon: const Opacity(
           opacity: 0.8,
           child: Icon(
@@ -18,9 +22,7 @@ class CustomSearchTextField extends StatelessWidget {
             size: 24,
           ),
         ),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(6),
-        ),
+        focusedBorder: outlineInputBorder,
       ),
     );
   }
