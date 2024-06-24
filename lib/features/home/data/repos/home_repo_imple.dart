@@ -5,6 +5,7 @@ import 'package:bookly_app/core/errors/failures.dart';
 import 'package:bookly_app/core/utils/api_service.dart';
 import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/data/repos/home_repo.dart';
+import 'package:dio/dio.dart';
 
 class HomeRepoImple implements HomeRepo {
   final ApiService apiService;
@@ -21,7 +22,11 @@ class HomeRepoImple implements HomeRepo {
       }
       return right(books);
     } catch (e) {
-      return left(ServerFailure());
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      } else {
+        return left(ServerFailure("An unexpected error occurred"));
+      }
     }
   }
 
