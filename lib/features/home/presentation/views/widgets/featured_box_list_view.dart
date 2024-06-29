@@ -17,13 +17,17 @@ class FeaturedBoxListView extends StatelessWidget {
           return SizedBox(
             height: MediaQuery.of(context).size.height * 0.23,
             child: ListView.builder(
+              physics: const BouncingScrollPhysics(),
               itemCount: state.books.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8),
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: CustomBookImage(
                     aspectRatio: 2 / 3,
+                    imageUrl: state
+                            .books[index].volumeInfo?.imageLinks?.thumbnail ??
+                        'https://images.pexels.com/photos/26631544/pexels-photo-26631544/free-photo-of-birds.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                   ),
                 );
               },

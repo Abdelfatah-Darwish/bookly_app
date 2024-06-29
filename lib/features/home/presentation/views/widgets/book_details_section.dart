@@ -14,7 +14,7 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.28),
-          child: const CustomBookImage(aspectRatio: 2 / 3),
+          child: const CustomBookImage(aspectRatio: 2 / 3, imageUrl: 'https://images.pexels.com/photos/26631544/pexels-photo-26631544/free-photo-of-birds.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',),
         ),
         const SizedBox(height: 43),
         const Text(
