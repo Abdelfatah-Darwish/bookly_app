@@ -1,7 +1,7 @@
 import '../../../../../core/utils/styles.dart';
 import 'book_rating.dart';
 import 'buttons_book_details_view.dart';
-import 'featured_list_view_item.dart';
+import 'custom_book_image.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsSection extends StatelessWidget {
@@ -30,7 +30,7 @@ class BookDetailsSection extends StatelessWidget {
         ),
         const SizedBox(height: 14),
         const BookRating(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center, rating: 5, count: 246,
         ),
         const SizedBox(height: 37),
         const ButtonsBook(),

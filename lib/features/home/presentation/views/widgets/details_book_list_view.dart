@@ -1,4 +1,4 @@
-import 'featured_list_view_item.dart';
+import 'custom_book_image.dart';
 import 'package:flutter/material.dart';
 
 class DetailsBookListView extends StatelessWidget {
