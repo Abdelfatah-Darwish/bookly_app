@@ -1,8 +1,10 @@
+import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/widgets/custom_error_widget.dart';
 import 'package:bookly_app/core/utils/widgets/custom_loading_indecator.dart';
 import 'package:bookly_app/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 import 'custom_book_image.dart';
 
@@ -23,11 +25,19 @@ class FeaturedBoxListView extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: CustomBookImage(
-                    aspectRatio: 2.6 / 4,
-                    imageUrl: state
-                            .books[index].volumeInfo?.imageLinks?.thumbnail ??
-                        'https://images.pexels.com/photos/26631544/pexels-photo-26631544/free-photo-of-birds.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                  child: GestureDetector(
+                    onTap: () {
+                      GoRouter.of(context).push(
+                        AppRouter.kBookDetailsView,
+                        extra: state.books[0],
+                      );
+                    },
+                    child: CustomBookImage(
+                      aspectRatio: 2.6 / 4,
+                      imageUrl: state
+                              .books[index].volumeInfo?.imageLinks?.thumbnail ??
+                          'https://images.pexels.com/photos/26631544/pexels-photo-26631544/free-photo-of-birds.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                    ),
                   ),
                 );
               },

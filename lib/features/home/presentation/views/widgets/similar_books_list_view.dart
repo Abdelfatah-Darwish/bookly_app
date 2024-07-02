@@ -6,8 +6,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'custom_book_image.dart';
 import 'package:flutter/material.dart';
 
-class DetailsBookListView extends StatelessWidget {
-  const DetailsBookListView({super.key});
+class SimilarBooksListView extends StatelessWidget {
+  const SimilarBooksListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +19,15 @@ class DetailsBookListView extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: ListView.builder(
-                itemCount: 10,
+                itemCount: state.books.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 6),
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 6),
                     child: CustomBookImage(
                       aspectRatio: 5 / 8,
-                      imageUrl:
+                      imageUrl: state
+                              .books[index].volumeInfo?.imageLinks?.thumbnail ??
                           'https://images.pexels.com/photos/26631544/pexels-photo-26631544/free-photo-of-birds.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                     ),
                   );
@@ -39,7 +40,7 @@ class DetailsBookListView extends StatelessWidget {
         } else if (state is SimilarBooksFailure) {
           return CustomErrorWidget(errorMessage: state.errorMessage);
         } else {
-           return const Center(child: Text('No data available'));
+          return const Center(child: Text('No data available'));
         }
       },
     );
