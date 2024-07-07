@@ -6,10 +6,10 @@ import 'package:equatable/equatable.dart';
 
 part 'newset_books_state.dart';
 
-class NewsetBooksCubit extends Cubit<NewsetBooksState> {
+class NewestBooksCubit extends Cubit<NewsetBooksState> {
   final HomeRepo homeRepo;
 
-  NewsetBooksCubit(this.homeRepo) : super(NewsetBooksInitial());
+  NewestBooksCubit(this.homeRepo) : super(NewsetBooksInitial());
 
   Future<void> fetchBestSellerBooks() async {
     emit(NewsetBooksLoading());

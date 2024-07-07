@@ -8,6 +8,7 @@ class CustomBookButton extends StatelessWidget {
   final BorderRadius borderRadius;
   final double? fontSize;
   final FontWeight? fontWeight;
+  final Function()? onPressed;
   const CustomBookButton({
     super.key,
     required this.text,
@@ -15,7 +16,7 @@ class CustomBookButton extends StatelessWidget {
     required this.backgroundColor,
     required this.borderRadius,
     this.fontSize,
-    this.fontWeight,
+    this.fontWeight, this.onPressed,
   });
 
   @override
@@ -30,7 +31,7 @@ class CustomBookButton extends StatelessWidget {
             borderRadius: borderRadius,
           ),
         ),
-        onPressed: () {},
+        onPressed: onPressed,
         child: Text(
           text,
           style: Styles.textStyle18.copyWith(

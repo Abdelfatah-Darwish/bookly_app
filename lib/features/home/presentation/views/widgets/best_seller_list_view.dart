@@ -10,7 +10,7 @@ class BestSellerListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<NewsetBooksCubit, NewsetBooksState>(
+    return BlocBuilder<NewestBooksCubit, NewsetBooksState>(
       builder: (context, state) {
         if (state is NewsetBooksLoading) {
           return const Center(child: CircularProgressIndicator());
