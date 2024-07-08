@@ -1,7 +1,7 @@
-import 'package:bookly_app/core/utils/app_router.dart';
-import 'package:bookly_app/core/utils/widgets/custom_error_widget.dart';
-import 'package:bookly_app/core/utils/widgets/custom_loading_indecator.dart';
-import 'package:bookly_app/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
+import '../../../../../core/utils/app_router.dart';
+import '../../../../../core/utils/widgets/custom_error_widget.dart';
+import '../../../../../core/utils/widgets/custom_loading_indecator.dart';
+import '../../manager/featured_books_cubit/featured_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';

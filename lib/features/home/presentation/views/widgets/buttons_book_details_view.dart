@@ -1,8 +1,7 @@
 // ignore_for_file: avoid_print, use_build_context_synchronously
 
+import 'package:bookly_app/core/models/book_model/book_model.dart';
 import 'package:bookly_app/core/utils/functions/launch_url.dart';
-import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../../core/utils/widgets/custom_book_button.dart';
 import 'package:flutter/material.dart';

@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
+import '../../../../../core/models/book_model/book_model.dart';
+import '../../../../../core/repos/home_repo.dart';
 
-import '../../../data/models/book_model/book_model.dart';
-import '../../../data/repos/home_repo.dart';
 import 'package:equatable/equatable.dart';
 
 part 'newset_books_state.dart';

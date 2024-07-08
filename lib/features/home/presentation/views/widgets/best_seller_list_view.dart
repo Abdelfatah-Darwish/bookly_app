@@ -1,5 +1,5 @@
-import 'package:bookly_app/core/utils/widgets/custom_error_widget.dart';
-import 'package:bookly_app/features/home/presentation/manager/newset_books/newset_books_cubit.dart';
+import '../../../../../core/utils/widgets/custom_error_widget.dart';
+import '../../manager/newset_books/newset_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 // import your cubit file

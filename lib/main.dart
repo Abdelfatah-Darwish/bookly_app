@@ -1,7 +1,8 @@
-import 'package:bookly_app/core/utils/service_locator.dart';
-import 'package:bookly_app/features/home/data/repos/home_repo_imple.dart';
-import 'package:bookly_app/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
-import 'package:bookly_app/features/home/presentation/manager/newset_books/newset_books_cubit.dart';
+import 'package:bookly_app/core/repos/home_repo_imple.dart';
+
+import 'core/utils/service_locator.dart';
+import 'features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
+import 'features/home/presentation/manager/newset_books/newset_books_cubit.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
