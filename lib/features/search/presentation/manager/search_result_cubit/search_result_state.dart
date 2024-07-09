@@ -16,13 +16,16 @@ class SearchResultFailure extends SearchResultState {
 
   const SearchResultFailure(this.message);
 
+  @override
+  List<Object> get props => [message];
 }
 
 class SearchResultSuccess extends SearchResultState {
   final List<BookModel> books;
+  final List<String> searchHistory;
 
-  const SearchResultSuccess(this.books);
+  const SearchResultSuccess(this.books, this.searchHistory);
 
   @override
-  List<Object> get props => [books];
+  List<Object> get props => [books, searchHistory];
 }

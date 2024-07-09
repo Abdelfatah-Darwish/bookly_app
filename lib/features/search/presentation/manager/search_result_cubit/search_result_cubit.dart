@@ -11,15 +11,19 @@ class SearchResultCubit extends Cubit<SearchResultState> {
   SearchResultCubit(this.homeRepo) : super(SearchResultInitial());
 
   final HomeRepo homeRepo;
+  List<String> searchHistory = [];
 
   Future<void> fetchSearchResult(String query) async {
+    if (query.isEmpty) return;
+    
+    searchHistory.add(query);
     emit(SearchResultLoading());
 
     Either<Failure, List<BookModel>> result =
         await homeRepo.fetchSearchResult(category: query);
     result.fold(
       (failure) => emit(SearchResultFailure(failure.errorMessage)),
-      (books) => emit(SearchResultSuccess(books)),
+      (books) => emit(SearchResultSuccess(books, List.from(searchHistory))),
     );
   }
 }

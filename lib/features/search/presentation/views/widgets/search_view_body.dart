@@ -16,9 +16,18 @@ class SearchViewBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomSearchTextField(
-            onSubmitted: (query) {
-              context.read<SearchResultCubit>().fetchSearchResult(query);
+          BlocBuilder<SearchResultCubit, SearchResultState>(
+            builder: (context, state) {
+              List<String> searchHistory = [];
+              if (state is SearchResultSuccess) {
+                searchHistory = state.searchHistory;
+              }
+              return CustomSearchTextField(
+                onSubmitted: (query) {
+                  context.read<SearchResultCubit>().fetchSearchResult(query);
+                },
+                searchHistory: searchHistory,
+              );
             },
           ),
           const SizedBox(height: 15),
