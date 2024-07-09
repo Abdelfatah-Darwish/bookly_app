@@ -4,7 +4,6 @@ import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-
 import '../../../../../constants.dart';
 import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/styles.dart';
@@ -47,6 +46,8 @@ class BestSellerListViewItem extends StatelessWidget {
                   Text(
                     bookModel.volumeInfo!.authors?.first ?? 'Unknown Author',
                     style: Styles.textStyle14,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                   ),
                   Row(
                     children: [

@@ -11,33 +11,35 @@ class SearchViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          BlocBuilder<SearchResultCubit, SearchResultState>(
-            builder: (context, state) {
-              List<String> searchHistory = [];
-              if (state is SearchResultSuccess) {
-                searchHistory = state.searchHistory;
-              }
-              return CustomSearchTextField(
-                onSubmitted: (query) {
-                  context.read<SearchResultCubit>().fetchSearchResult(query);
-                },
-                searchHistory: searchHistory,
-              );
-            },
-          ),
-          const SizedBox(height: 15),
-          const Text(
-            'Search Result',
-            style: Styles.textStyle18,
-          ),
-          const SizedBox(height: 15),
-          const Expanded(child: SearchResultListView()),
-        ],
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            BlocBuilder<SearchResultCubit, SearchResultState>(
+              builder: (context, state) {
+                List<String> searchHistory = [];
+                if (state is SearchResultSuccess) {
+                  searchHistory = state.searchHistory;
+                }
+                return CustomSearchTextField(
+                  onSubmitted: (query) {
+                    context.read<SearchResultCubit>().fetchSearchResult(query);
+                  },
+                  searchHistory: searchHistory,
+                );
+              },
+            ),
+            const SizedBox(height: 15),
+            const Text(
+              'Search Result',
+              style: Styles.textStyle18,
+            ),
+            const SizedBox(height: 15),
+            const SearchResultListView(), // Changed from Expanded to a regular widget
+          ],
+        ),
       ),
     );
   }
