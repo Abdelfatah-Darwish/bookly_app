@@ -81,17 +81,36 @@ class _CustomSearchTextFieldState extends State<CustomSearchTextField> {
         if (filteredHistory.isNotEmpty)
           Container(
             constraints: const BoxConstraints(maxHeight: 200),
+            decoration: BoxDecoration(
+              color: const Color(0xff100B20),
+              borderRadius: BorderRadius.circular(6),
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.black26,
+                  blurRadius: 10,
+                  offset: Offset(0, 4),
+                ),
+              ],
+            ),
+            margin: const EdgeInsets.only(top: 8),
             child: ListView.builder(
               shrinkWrap: true,
               itemCount: filteredHistory.length,
               itemBuilder: (context, index) {
                 final suggestion = filteredHistory[index];
                 return ListTile(
-                  title: Text(suggestion),
+                  title: Text(
+                    suggestion,
+                    style: const TextStyle(color: Colors.white),
+                  ),
                   onTap: () {
                     _controller.text = suggestion;
                     widget.onSubmitted(suggestion);
                   },
+                  tileColor: const Color(0xff100B20),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(6),
+                  ),
                 );
               },
             ),
